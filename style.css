@@ -1,0 +1,170 @@
+/* Main body styling */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom, #ffccf9, #ffebff);
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Main container for the weather app */
+.weather-app {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title styling */
+h1 {
+    color: #ff69b4;
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px #ffb6c1;
+}
+
+/* Search box styling */
+.search-box {
+    margin-bottom: 30px;
+}
+
+/* Input field styling */
+#search-input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+}
+
+/* Search button styling */
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Search button hover effect */
+#search-button:hover {
+    background-color: #ff1493;
+}
+
+/* Weather information container styling */
+#weather-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+/* Weather information title styling */
+#weather-info h2 {
+    margin-top: 0;
+    color: #ff69b4;
+}
+
+/* Weather information text styling */
+#weather-info p {
+    margin: 10px 0;
+    color: #ff1493;
+}
+
+/* Weather icon styling */
+#weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+/* Floating cloud effect */
+.cloud {
+    position: fixed;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+    animation: float 10s ease-in-out infinite;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Cloud styling and positioning */
+.cloud-small {
+    width: 80px;
+    height: 50px;
+    top: 50px;
+    left: 20%;
+}
+
+.cloud-medium {
+    width: 120px;
+    height: 70px;
+    top: 150px;
+    left: 60%;
+}
+
+.cloud-large {
+    width: 180px;
+    height: 100px;
+    top: 80px;
+    right: 10%;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    #weather-info {
+        padding: 15px;
+    }
+
+    .cloud-small {
+        top: 20px;
+        left: 10%;
+    }
+
+    .cloud-medium {
+        top: 120px;
+        left: 50%;
+    }
+
+    .cloud-large {
+        top: 60px;
+        right: 5%;
+    }
+}
+
+/* Add clouds to the body using pseudo-elements */
+body::after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Cloud instances styling for different sizes */
+body .cloud-small, body .cloud-medium, body .cloud-large {
+    position: fixed;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+}
